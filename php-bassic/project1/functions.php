@@ -1,15 +1,17 @@
 <?php
 // koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "umkm");
-
+function koneksi()
+{
+  return mysqli_connect('localhost', 'root', '', 'umkm');
+}
 
 function query($query)
 {
-  global $conn;
+  $conn = koneksi();
   $result = mysqli_query($conn, $query);
   $rows = [];
   while ($row = mysqli_fetch_assoc($result)) {
     $rows[] = $row;
   }
-  return $row;
+  return $rows;
 }

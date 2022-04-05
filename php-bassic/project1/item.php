@@ -3,7 +3,6 @@ require 'functions.php';
 
 $items = query("SELECT * FROM tb_items");
 
-
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -27,18 +26,17 @@ $items = query("SELECT * FROM tb_items");
     </thead>
     <tbody>
 
-      <?php $i = 1; ?>
-      <?php foreach ($items as $item) : ?>
+      <?php $i = 1;
+      foreach ($items as $item) : ?>
         <tr>
-          <td><?php echo $i; ?></td>
-          <td><?= $item["nama"]; ?></td>
-          <td><?= $item["harga"]; ?></td>
+          <td><?php echo $i++; ?></td>
+          <td><?php echo $item["nama"]; ?></td>
+          <td><?php echo $item["harga"]; ?></td>
           <td>
             <a href="">Delete</a>|
             <a href="">Edit</a>
           </td>
         </tr>
-        <?php $i++ ?>
       <?php endforeach; ?>
     </tbody>
   </table>
