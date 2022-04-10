@@ -33,8 +33,7 @@ $items = query("SELECT * FROM tb_items");
           <td><?php echo $item["nama"]; ?></td>
           <td><?php echo $item["harga"]; ?></td>
           <td>
-            <a href="">Delete</a>|
-            <a href="">Edit</a>
+            <a href="detail_barang.php?id=<?= $item['id']; ?>">Detail</a>
           </td>
         </tr>
       <?php endforeach; ?>
