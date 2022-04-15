@@ -20,3 +20,16 @@ function query($query)
   }
   return $rows;
 }
+
+function tambah($data)
+{
+  $conn = koneksi();
+
+  $nama = $data['nama'];
+  $harga = $data['harga'];
+
+  $query = "INSERT INTO tb_items VALUES (null, '$nama', '$harga');";
+  mysqli_query($conn, $query);
+
+  return mysqli_affected_rows($conn);
+}

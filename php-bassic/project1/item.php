@@ -15,6 +15,8 @@ $items = query("SELECT * FROM tb_items");
 
 <body>
   <h1>Daftar Menu</h1>
+  <a href="tambah.php">Tambah</a>
+  <br>
   <table border="1" cellpadding="10" cellspacing="0">
     <thead>
       <tr>
