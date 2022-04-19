@@ -21,7 +21,9 @@ $item = query("SELECT * FROM tb_items WHERE id = $id");
     <li>Harga : <?= $item["harga"]; ?></li>
     <li>Stok Barang : 1kg</li>
   </ul>
-  <a href="item.php">Kembali</a>
+  <a href="index.php">Kembali</a> |
+  <a href="edit.php?id=<?= $item["id"]; ?>">Edit</a> |
+  <a href="hapus.php?id=<?= $item["id"]; ?>" onclick="return confirm('Yakin Ingin Menghapus Data')">Hapus</a>
 </body>
 
 </html>

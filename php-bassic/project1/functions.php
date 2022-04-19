@@ -33,3 +33,27 @@ function tambah($data)
 
   return mysqli_affected_rows($conn);
 }
+
+function hapus($id)
+{
+  $conn = koneksi();
+  mysqli_query($conn, "DELETE FROM tb_items WHERE id = $id") or die(mysqli_error($conn));
+  return mysqli_affected_rows($conn);
+}
+
+function edit($data)
+{
+  $conn = koneksi();
+
+  $id = $data['id'];
+  $nama = htmlspecialchars($data['nama']);
+  $harga = htmlspecialchars($data['harga']);
+
+  $query = "UPDATE tb_items SET 
+            nama = '$nama',
+            harga = '$harga'
+            WHERE id = $id ";
+  mysqli_query($conn, $query);
+
+  return mysqli_affected_rows($conn);
+}
